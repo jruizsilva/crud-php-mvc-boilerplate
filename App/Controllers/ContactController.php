@@ -21,10 +21,12 @@ class ContactController extends Controller
 
   public function create()
   {
+    return "create";
   }
 
   public function update()
   {
+    return "update";
   }
 
   public function delete()

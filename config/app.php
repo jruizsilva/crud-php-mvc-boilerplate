@@ -1,6 +1,6 @@
 <?php
 
-const APP_URL = "http://localhost/CRUD/";
+const APP_URL = "http://crud.test";
 const APP_NAME = "CRUD";
 const APP_SESSION_NAME = "CRUD";
 

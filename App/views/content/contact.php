@@ -47,20 +47,20 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form>
+            <form id="createContactForm">
               <div class="mb-3">
-                <label for="name" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="name" aria-describedby="nameHelp">
+                <label for="name" class="form-label">Nombre*</label>
+                <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp">
               </div>
               <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email">
+                <label for="email" class="form-label">Email*</label>
+                <input type="email" class="form-control" name="email" id="email">
               </div>
               <div class="mb-3">
-                <label for="phone" class="form-label">Phone</label>
-                <input type="text" class="form-control" id="phone">
+                <label for="phone" class="form-label">Phone*</label>
+                <input type="text" class="form-control" name="phone" id="phone">
               </div>
-              <button type="button" class="btn btn-primary ms-auto">Crear</button>
+              <button type="submit" class="btn btn-primary ms-auto">Crear</button>
             </form>
           </div>
         </div>
@@ -69,6 +69,7 @@
   </div>
 
   <?php require_once("App/views/inc/script.php") ?>
+  <script src="App/views/js/contacts.js"></script>
 </body>
 
 </html>
