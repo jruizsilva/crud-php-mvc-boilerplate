@@ -204,7 +204,8 @@ class Model
   public function update($id, $data)
   {
     $fields = [];
-    foreach ($data as $key) {
+    $keys = array_keys($data);
+    foreach ($keys as $key) {
       $fields[] = "{$key} = ?";
     }
     $fields = implode(', ', $fields);

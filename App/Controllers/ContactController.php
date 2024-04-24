@@ -16,8 +16,19 @@ class ContactController extends Controller
     return $this->view('contact', $data);
   }
 
-  public function findOne()
+  public function findOne($id)
   {
+    validateId($id);
+    $model = new Contact;
+    try {
+      $contact = $model->where("id", "=", $id)->first();
+      if (empty($contact)) {
+        notFoundResponse("El contacto no existe");
+      }
+      return $contact;
+    } catch (Exception $e) {
+      internalServerErrorResponse("Error al obtener contacto", $e->getMessage());
+    }
   }
 
   public function create()
@@ -37,7 +48,22 @@ class ContactController extends Controller
 
   public function update()
   {
-    return "update";
+    validateFields($_POST, "id", "name", "email", "phone");
+    $id = $_POST['id'];
+    validateId($id);
+    try {
+      $model = new Contact;
+      $contact = $model->where("id", "=", $id)->first();
+      if (empty($contact)) {
+        return notFoundResponse("El contacto a actualizar no existe");
+      }
+
+      $model->update($id, $_POST);
+
+      return okResponse("Contacto actualizado correctamente");
+    } catch (Exception $e) {
+      internalServerErrorResponse("Error al actualizar usuario", $e->getMessage());
+    }
   }
 
   public function delete($id)

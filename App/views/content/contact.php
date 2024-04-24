@@ -13,7 +13,7 @@
     dep($contacts);
     ?>
     <!-- Button trigger create contact modal -->
-    <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#createContact">
+    <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#contactModal" onclick="fillFieldsCreateForm()">
       Agregar contacto
     </button>
     <table class="table">
@@ -33,7 +33,7 @@
             <td><?php echo $contact['email']; ?></td>
             <td><?php echo $contact['phone']; ?></td>
             <td>
-              <button type="button" class="btn btn-sm btn-warning" onclick="handleEdit(<?php echo $contact['id'] ?>)">Editar</button>
+              <button type="button" class="btn btn-sm btn-warning" onclick="fillFieldsEditForm(<?php echo $contact['id'] ?>)" data-bs-toggle="modal" data-bs-target="#contactModal">Editar</button>
               <button type="button" class="btn btn-sm btn-danger" onclick="handleDelete(<?php echo $contact['id'] ?>)">Eliminar</button>
             </td>
           </tr>
@@ -41,16 +41,17 @@
       </tbody>
     </table>
 
-    <!-- Modal create contact -->
-    <div class="modal fade" id="createContact" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <!-- Modal contact -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="contactModalLabel">Crear contacto</h1>
+            <h1 class="modal-title fs-5" id="contactModalLabel"></h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form id="createContactForm">
+              <input type="hidden" name="id" id="id">
               <div class="mb-3">
                 <label for="name" class="form-label">Nombre*</label>
                 <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp">
@@ -63,7 +64,7 @@
                 <label for="phone" class="form-label">Phone*</label>
                 <input type="text" class="form-control" name="phone" id="phone">
               </div>
-              <button type="submit" class="btn btn-primary ms-auto">Crear</button>
+              <button type="submit" class="btn btn-primary ms-auto" id="modalSubmitBtn"></button>
             </form>
           </div>
         </div>
