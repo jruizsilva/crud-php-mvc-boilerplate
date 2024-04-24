@@ -57,8 +57,8 @@ function handleUpdate(formData) {
     .then((res) => {
       console.log(res);
       if (res.status == 200 && res.data.success == true) {
-        // alert("Contacto actualizado correctamente");
-        // window.location.href = APP_URL + "/contacts";
+        alert("Contacto actualizado correctamente");
+        window.location.href = APP_URL + "/contacts";
       }
     })
     .catch((err) => {

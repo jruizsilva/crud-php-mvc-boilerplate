@@ -50,7 +50,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form id="createContactForm">
+            <form id="createContactForm" autocomplete="off">
               <input type="hidden" name="id" id="id">
               <div class="mb-3">
                 <label for="name" class="form-label">Nombre*</label>
