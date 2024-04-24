@@ -7,13 +7,21 @@ use Exception;
 
 class ContactController extends Controller
 {
-  public function findAll()
+  public function index()
   {
     $model = new Contact;
     $contacts = $model->findAll();
     $data = compact('contacts');
 
     return $this->view('contact', $data);
+  }
+
+  public function findAll()
+  {
+    $model = new Contact;
+    $contacts = $model->findAll();
+
+    return $contacts;
   }
 
   public function findOne($id)

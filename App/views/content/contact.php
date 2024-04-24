@@ -24,7 +24,7 @@
         <th scope="col">Telefono</th>
         <th scope="col">Acciones</th>
       </thead>
-      <tbody>
+      <tbody id="contactsTableBody">
         <?php $contador = 1 ?>
         <?php foreach ($contacts as $contact) { ?>
           <tr>

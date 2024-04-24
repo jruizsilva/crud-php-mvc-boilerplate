@@ -6,7 +6,8 @@ use Lib\Route;
 
 Route::get("/", [HomeController::class, 'index']);
 
-Route::get("/contacts", [ContactController::class, 'findAll']);
+Route::get("/contacts", [ContactController::class, 'index']);
+Route::get("/contacts/all", [ContactController::class, 'findAll']);
 Route::get("/contacts/:id", [ContactController::class, 'findOne']);
 Route::post("/contacts", [ContactController::class, 'create']);
 Route::post("/contacts/:id/update", [ContactController::class, 'update']);

@@ -41,8 +41,7 @@ function handleDelete(id) {
     .post(`${APP_URL}/contacts/${id}/delete`)
     .then((res) => {
       if (res.status == 200 && res.data.success == true) {
-        alert("Contacto eliminado correctamente");
-        window.location.href = APP_URL + "/contacts";
+        fetchAllContacts();
       }
     })
     .catch((err) => {
@@ -57,8 +56,7 @@ function handleUpdate(formData) {
     .then((res) => {
       console.log(res);
       if (res.status == 200 && res.data.success == true) {
-        alert("Contacto actualizado correctamente");
-        window.location.href = APP_URL + "/contacts";
+        fetchAllContacts();
       }
     })
     .catch((err) => {
@@ -95,4 +93,36 @@ function resetForm() {
   d.querySelector("#email").value = "";
   d.querySelector("#phone").value = "";
   d.querySelector("#id").value = "";
+}
+
+function fetchAllContacts() {
+  axios
+    .get(`${APP_URL}/contacts/all`)
+    .then((res) => {
+      const contacts = res.data;
+      const contactsTableBody = d.querySelector("#contactsTableBody");
+      contactsTableBody.innerHTML = "";
+      let contador = 1;
+      contacts.forEach((contact) => {
+        contactsTableBody.innerHTML += `
+          <tr>
+            <td scope="row">${contador++}</td>
+            <td>${contact.name}</td>
+            <td>${contact.email}</td>
+            <td>${contact.phone}</td>
+            <td>
+            <button type="button" class="btn btn-sm btn-warning" onclick="${fillFieldsEditForm(
+              contact.id
+            )}" data-bs-toggle="modal" data-bs-target="#contactModal">Editar</button>
+            <button type="button" class="btn btn-sm btn-danger" onclick="handleDelete(${
+              contact.id
+            })">Eliminar</button>
+            </td>
+          </tr>
+        `;
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
