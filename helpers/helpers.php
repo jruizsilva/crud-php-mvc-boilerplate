@@ -54,20 +54,20 @@ function validateFields($data, ...$fields)
 {
   foreach ($fields as $field) {
     if (!isset($data[$field]) || empty($data[$field])) {
-      badRequestResponse("field $field is required");
+      return badRequestResponse("field $field is required");
     }
   }
 }
 function validateStatus($status)
 {
   if ($status != 1 && $status != 2) {
-    badRequestResponse("field status must be 1 or 2: $status");
+    return badRequestResponse("field status must be 1 or 2: $status");
   }
 }
 function validateId($id)
 {
   if (!isset($id) || empty($id)) {
-    badRequestResponse("id is required");
+    return badRequestResponse("id is required");
   }
   validateInteger($id, "id");
 }
@@ -91,12 +91,9 @@ function validateToken($token)
 
 function jsonResponse(array $data, int $code = 200)
 {
-  if (is_array($data)) {
-    header("HTTP/1.1 " . $code);
-    header("Content-Type: application/json");
-    echo json_encode($data, true);
-  }
-  die();
+  header("HTTP/1.1 " . $code);
+  header("Content-Type: application/json");
+  return $data;
 }
 
 function okResponse(string $message)
@@ -105,7 +102,7 @@ function okResponse(string $message)
     "success" => true,
     "message" => $message
   ];
-  jsonResponse($data, 200);
+  return jsonResponse($data, 200);
 }
 function createdResponse(string $message)
 {
@@ -113,7 +110,7 @@ function createdResponse(string $message)
     "success" => true,
     "message" => $message
   ];
-  jsonResponse($data, 201);
+  return jsonResponse($data, 201);
 }
 
 function badRequestResponse(string $message)
@@ -122,7 +119,7 @@ function badRequestResponse(string $message)
     "success" => false,
     "message" => $message
   ];
-  jsonResponse($data, 400);
+  return jsonResponse($data, 400);
 }
 function paramsErrorResponse(string $message)
 {
@@ -130,7 +127,7 @@ function paramsErrorResponse(string $message)
     "success" => false,
     "message" => "Params error: " . $message,
   ];
-  jsonResponse($data, 400);
+  return jsonResponse($data, 400);
 }
 
 function internalServerErrorResponse(string $message, string $error)
@@ -140,7 +137,7 @@ function internalServerErrorResponse(string $message, string $error)
     "message" => $message,
     "error" => $error
   ];
-  jsonResponse($data, 500);
+  return jsonResponse($data, 500);
 }
 
 function methodNotAllowedResponse(string $method)
@@ -149,7 +146,7 @@ function methodNotAllowedResponse(string $method)
     "success" => false,
     "message" => "Error en la solicitud $method"
   ];
-  jsonResponse($data, 405);
+  return jsonResponse($data, 405);
 }
 
 function notFoundResponse($message = null)
@@ -158,7 +155,7 @@ function notFoundResponse($message = null)
     "success" => false,
     "message" => $message ?? "Recurso no encontrado"
   ];
-  jsonResponse($data, 404);
+  return jsonResponse($data, 404);
 }
 
 //Envio de correos

@@ -24,7 +24,10 @@ function insertContact(formData) {
   axios
     .post(APP_URL + "/contacts", formData)
     .then((res) => {
-      console.log(res);
+      if (res.status == 201 && res.data.success == true) {
+        alert("Contacto creado correctamente");
+        window.location.href = APP_URL + "/contacts";
+      }
     })
     .catch((err) => {
       console.log(err);
