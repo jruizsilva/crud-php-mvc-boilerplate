@@ -111,12 +111,12 @@ function fetchAllContacts() {
             <td>${contact.email}</td>
             <td>${contact.phone}</td>
             <td>
-            <button type="button" class="btn btn-sm btn-warning" onclick="${fillFieldsEditForm(
-              contact.id
-            )}" data-bs-toggle="modal" data-bs-target="#contactModal">Editar</button>
-            <button type="button" class="btn btn-sm btn-danger" onclick="handleDelete(${
-              contact.id
-            })">Eliminar</button>
+            <button type="button" class="btn btn-sm btn-warning" onclick="fillFieldsEditForm(
+              ${contact.id}
+            )" data-bs-toggle="modal" data-bs-target="#contactModal">Editar</button>
+            <button type="button" class="btn btn-sm btn-danger" onclick="handleDelete(
+              ${contact.id}
+            )">Eliminar</button>
             </td>
           </tr>
         `;
