@@ -54,7 +54,6 @@ function handleUpdate(formData) {
   axios
     .post(`${APP_URL}/contacts/${id}/update`, formData)
     .then((res) => {
-      console.log(res);
       if (res.status == 200 && res.data.success == true) {
         fetchAllContacts();
       }
