@@ -40,7 +40,19 @@ class ContactController extends Controller
     return "update";
   }
 
-  public function delete()
+  public function delete($id)
   {
+    validateId($id);
+    $model = new Contact;
+    try {
+      $contact = $model->where("id", "=", $id)->first();
+      if (empty($contact)) {
+        notFoundResponse("El contacto no existe");
+      }
+      $model->deleteById($id);
+      return okResponse("Contacto eliminado correctamente");
+    } catch (Exception $e) {
+      internalServerErrorResponse("Error al eliminar contacto", $e->getMessage());
+    }
   }
 }

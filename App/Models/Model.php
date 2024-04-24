@@ -214,7 +214,7 @@ class Model
     $this->query($sql, $values);
   }
 
-  public function delete($id)
+  public function deleteById($id)
   {
     $sql = "DELETE FROM {$this->table} WHERE id = ?";
     $this->query($sql, [$id], 'i');

@@ -22,7 +22,7 @@
         <th scope="col">Nombre</th>
         <th scope="col">Correo</th>
         <th scope="col">Telefono</th>
-        <th scope="col" class="text-center">Acciones</th>
+        <th scope="col">Acciones</th>
       </thead>
       <tbody>
         <?php $contador = 1 ?>
@@ -32,7 +32,10 @@
             <td><?php echo $contact['name']; ?></td>
             <td><?php echo $contact['email']; ?></td>
             <td><?php echo $contact['phone']; ?></td>
-            <td class="d-flex justify-content-center gap-2"><button type="button" class="btn btn-warning">Edit</button><button type="button" class="btn btn-danger">Delete</button></td>
+            <td>
+              <button type="button" class="btn btn-sm btn-warning" onclick="handleEdit(<?php echo $contact['id'] ?>)">Editar</button>
+              <button type="button" class="btn btn-sm btn-danger" onclick="handleDelete(<?php echo $contact['id'] ?>)">Eliminar</button>
+            </td>
           </tr>
         <?php } ?>
       </tbody>
