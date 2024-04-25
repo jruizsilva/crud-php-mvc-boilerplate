@@ -31,7 +31,7 @@
               <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 <?php echo $_SESSION['user']['name']; ?>
               </button>
-              <ul class="dropdown-menu dropdown-menu-dark">
+              <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
                 <li>
                   <a href="<?php echo APP_URL; ?>/account" class="dropdown-item">Mi cuenta</a>
                 </li>
