@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\AuthController;
 use App\Controllers\ContactController;
 use App\Controllers\HomeController;
 use Lib\Route;
@@ -12,5 +13,8 @@ Route::get("/contacts/:id", [ContactController::class, 'findOne']);
 Route::post("/contacts", [ContactController::class, 'create']);
 Route::post("/contacts/:id/update", [ContactController::class, 'update']);
 Route::post("/contacts/:id/delete", [ContactController::class, 'delete']);
+
+Route::get("/login", [AuthController::class, 'login']);
+Route::get("/register", [AuthController::class, 'register']);;
 
 Route::dispatch();
