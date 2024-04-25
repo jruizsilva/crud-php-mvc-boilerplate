@@ -22,5 +22,6 @@ Route::post("/register", [AuthController::class, 'register']);
 Route::get("/logout", [AuthController::class, 'logout']);
 
 Route::get("/account", [UserController::class, 'accountView']);
+Route::post("/account/:id/update", [UserController::class, 'update']);
 
 Route::dispatch();
