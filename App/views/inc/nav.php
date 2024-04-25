@@ -33,7 +33,19 @@
 
         <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
           <?php if (isset($_SESSION['user'])) { ?>
-            <a href="<?php echo APP_URL; ?>/logout" class="btn btn-outline-secondary">Cerrar sesión</a>
+            <div class="nav-item dropdown">
+              <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <?php echo $_SESSION['user']['name']; ?>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li>
+                  <a href="<?php echo APP_URL; ?>/account" class="dropdown-item">Mi cuenta</a>
+                </li>
+                <li>
+                  <a href="<?php echo APP_URL; ?>/logout" class="dropdown-item">Cerrar sesión</a>
+                </li>
+              </ul>
+            </div>
           <?php } ?>
           <?php if (!isset($_SESSION['user'])) { ?>
             <a href="<?php echo APP_URL; ?>/login" class="text-white">Iniciar sesión</a>

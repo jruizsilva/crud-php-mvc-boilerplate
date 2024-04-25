@@ -5,7 +5,6 @@
 
   <div class="container">
     <?php dep($_SESSION) ?>
-
   </div>
 
   <?php require_once("App/views/inc/script.php"); ?>
