@@ -3,7 +3,7 @@
 <body>
   <?php include("App/views/inc/nav.php"); ?>
   <div class="container py-4">
-    <h1 class="text-center">Iniciar sesión</h1>
+    <h1 class="fs-3">Iniciar sesión</h1>
     <form autocomplete="off" id="loginForm">
       <div class="mb-3">
         <label for="username" class="form-label">Usuario</label>

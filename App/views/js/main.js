@@ -4,8 +4,9 @@ function logout() {
   axios
     .post(APP_URL + "/logout")
     .then((res) => {
-      if (res.status === 200 && res.data.success) {
-        window.location.href = `${APP_URL}/login`;
+      console.log(res);
+      if (res.status === 200) {
+        // window.location.href = `${APP_URL}/login`;
       }
     })
     .catch((err) => {

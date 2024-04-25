@@ -1,23 +1,7 @@
-<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container">
-    <a class="navbar-brand" href="<?php echo APP_URL; ?>">App</a>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <div>
-        <a href="<?php echo APP_URL; ?>/login" class="btn btn-light btn-sm">Iniciar sesión</a>
-        <a href="<?php echo APP_URL; ?>/register" class="btn btn-primary btn-sm">Crear cuenta</a>
-        <button onclick="logout()" class="btn btn-danger btn-sm">Cerrar sesión</button>
-      </div>
-    </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-</nav> -->
-
-<nav class="navbar navbar-expand-lg bg-transparent">
+<nav class="navbar py-3 navbar-expand-lg border-bottom border-3 border-white">
   <div class="container">
     <!-- Logo -->
-    <a class="navbar-brand fs-4" href="#">App</a>
+    <a class="navbar-brand fs-4" href="<?php echo APP_URL; ?>">App</a>
     <!-- Toggler button -->
     <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -29,24 +13,33 @@
         <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <!-- Offcanvas body -->
-      <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
-        <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3 fs-5">
-          <li class="nav-item mx-2">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#">About</a>
-          </li>
-        </ul>
+      <div class="offcanvas-body d-flex justify-content-end flex-column flex-lg-row p-4 p-lg-0">
+        <?php if (isset($_SESSION['user'])) { ?>
+          <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3 fs-5">
+            <li class="nav-item mx-2">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        <?php } ?>
+
         <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-          <a href="/login" class="text-white">Login</a>
-          <a href="/register" class="text-white text-decoration-none px-3 py-1 bg-primary rounded-4">Sign up</a>
+          <?php if (isset($_SESSION['user'])) { ?>
+            <a href="<?php echo APP_URL; ?>/logout" class="btn btn-outline-secondary">Cerrar sesión</a>
+          <?php } ?>
+          <?php if (!isset($_SESSION['user'])) { ?>
+            <a href="<?php echo APP_URL; ?>/login" class="text-white">Iniciar sesión</a>
+            <a href="<?php echo APP_URL; ?>/register" class="text-white text-decoration-none px-3 py-1 bg-primary rounded-4">Crear cuenta</a>
+          <?php } ?>
+
         </div>
       </div>
     </div>
