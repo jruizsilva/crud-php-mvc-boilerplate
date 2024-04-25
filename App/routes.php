@@ -15,6 +15,8 @@ Route::post("/contacts/:id/update", [ContactController::class, 'update']);
 Route::post("/contacts/:id/delete", [ContactController::class, 'delete']);
 
 Route::get("/login", [AuthController::class, 'login']);
-Route::get("/register", [AuthController::class, 'register']);;
+Route::get("/register", [AuthController::class, 'registerView']);
+Route::post("/authenticate", [AuthController::class, 'authenticate']);
+Route::post("/register", [AuthController::class, 'register']);
 
 Route::dispatch();
