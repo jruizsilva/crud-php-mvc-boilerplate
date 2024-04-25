@@ -17,16 +17,10 @@
         <?php if (isset($_SESSION['user'])) { ?>
           <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3 fs-5">
             <li class="nav-item mx-2">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link <?php echo $_SERVER['REQUEST_URI'] == '/' ? 'active' : '' ?>" aria-current="page" href="<?php echo APP_URL; ?>">Home</a>
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link <?php echo $_SERVER['REQUEST_URI'] == '/contacts' ? 'active' : '' ?>" aria-current="page" href="<?php echo APP_URL; ?>/contacts">Contactos</a>
             </li>
           </ul>
         <?php } ?>

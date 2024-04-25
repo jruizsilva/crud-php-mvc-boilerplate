@@ -1,6 +1,7 @@
 <?php require_once("App/views/inc/head.php"); ?>
 
 <body>
+  <?php require_once("App/views/inc/nav.php"); ?>
   <div class="container py-4">
     <h1 class="text-center">Listado de contactos</h1>
 
