@@ -77,6 +77,11 @@ class AuthController extends Controller
 
   public function logout()
   {
-    return "logout";
+    if (session_destroy()) {
+      return [
+        'success' => true,
+        'message' => 'Sesión cerrada exitosamente'
+      ];
+    };
   }
 }

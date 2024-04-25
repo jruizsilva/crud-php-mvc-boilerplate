@@ -23,6 +23,9 @@ function loginAccount(formData) {
     .post(APP_URL + "/login", formData)
     .then((res) => {
       console.log(res);
+      if (res.status == 200 && res.data.success == true) {
+        window.location.href = APP_URL;
+      }
     })
     .catch((err) => {
       console.log(err);
