@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="es" data-bs-theme="dark">
-
-<head>
-  <?php require_once("App/views/inc/head.php"); ?>
-</head>
+<?php require_once("App/views/inc/head.php"); ?>
 
 <body>
   <div class="container py-4">
@@ -73,7 +68,6 @@
   </div>
 
   <?php require_once("App/views/inc/script.php") ?>
-  <script src="App/views/js/contacts.js"></script>
 </body>
 
 </html>

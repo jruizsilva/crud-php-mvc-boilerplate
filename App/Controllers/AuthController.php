@@ -7,6 +7,13 @@ use Exception;
 
 class AuthController extends Controller
 {
+  public function __construct()
+  {
+    session_start();
+    if (isset($_SESSION['user'])) {
+      return $this->redirect('/');
+    }
+  }
   public function loginView()
   {
     $data = [
@@ -48,6 +55,23 @@ class AuthController extends Controller
 
   public function login()
   {
+    validateFields($_POST, "name", "username", "password");
+    $_POST['username'] = strtolower($_POST['username']);
+    $model = new User();
+    try {
+      $user = $model->where("username", "=", $_POST['username'])->first();
+      if (empty($user)) {
+        return badRequestResponse("El usuario o la contraseña son incorrectos");
+      }
+      if (!password_verify($_POST['password'], $user['password'])) {
+        return badRequestResponse("El usuario o la contraseña son incorrectos");
+      }
+      unset($user['password']);
+      $_SESSION['user'] = $user;
+      return okResponse("Usuario logueado exitosamente");
+    } catch (Exception $e) {
+      return $e->getMessage();
+    }
     return "login";
   }
 

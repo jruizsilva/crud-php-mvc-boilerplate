@@ -18,7 +18,12 @@ class ContactController extends Controller
   {
     $model = new Contact;
     $contacts = $model->findAll();
-    $data = compact('contacts');
+    $data = [
+      'contacts' => $contacts,
+      'head_title' => 'Contactos',
+      'head_description' => 'Listado de contactos',
+      'jsfilename' => 'contact',
+    ];
 
     return $this->view('contact', $data);
   }

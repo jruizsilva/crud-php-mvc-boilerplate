@@ -8,6 +8,7 @@ class HomeController extends Controller
 {
   public function __construct()
   {
+    session_start();
     if (!isset($_SESSION['user'])) {
       $this->redirect('login');
     }
@@ -17,8 +18,9 @@ class HomeController extends Controller
   {
     $model = new Contact;
     $data = [
-      'title' => 'Home',
-      'description' => 'This is the home page'
+      'head_title' => 'Home',
+      'head_description' => 'This is the home page',
+      'jsfilename' => 'home',
     ];
     return $this->view('home', $data);
   }

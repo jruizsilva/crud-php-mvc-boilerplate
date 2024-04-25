@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-</head>
+<?php require_once("App/views/inc/head.php"); ?>
 
 <body>
-  <?php echo $description; ?>
+  <?php require_once("App/views/inc/nav.php"); ?>
+
+  <div class="container">
+    <?php dep($_SESSION) ?>
+
+  </div>
+
+  <?php require_once("App/views/inc/script.php"); ?>
 </body>
 
 </html>
