@@ -94,7 +94,7 @@ class Model
 
   public function orderBy($column, $order = 'ASC')
   {
-    if (!empty($this->query)) {
+    if (!empty($this->orderBy)) {
       $this->orderBy .= ", {$column} {$order}";
     } else {
       $this->orderBy = " ORDER BY {$column} {$order}";
@@ -128,29 +128,24 @@ class Model
       if (!empty($this->orderBy)) {
         $sql .= $this->orderBy;
       }
-
       $this->query($sql, $this->values);
     }
     $this->values = [];
     return $this->query->fetch_all(MYSQLI_ASSOC);
   }
-
   public function paginate($cant = 15)
   {
     $page = $_GET['page'] ?? 1;
 
-    if (empty($this->query)) {
-      $sql = "SELECT {$this->select} FROM {$this->table}";
-      if (!empty($this->where)) {
-        $sql .= " WHERE {$this->where}";
-      }
-      if (!empty($this->orderBy)) {
-        $sql .= $this->orderBy;
-      }
-
-      $sql .= " LIMIT " . ($page - 1) * $cant . ", {$cant}";
-      $data = $this->query($sql, $this->values)->all();
+    $sql = "SELECT {$this->select} FROM {$this->table}";
+    if (!empty($this->where)) {
+      $sql .= " WHERE {$this->where}";
     }
+    if (!empty($this->orderBy)) {
+      $sql .= $this->orderBy;
+    }
+    $sql .= " LIMIT " . ($page - 1) * $cant . ", {$cant}";
+    $data = $this->query($sql, $this->values)->all();
 
     $total = $this->query('SELECT FOUND_ROWS() as total')->first()['total'];
     $uri = $_SERVER['REQUEST_URI'];

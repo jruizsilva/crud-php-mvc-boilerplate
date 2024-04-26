@@ -8,10 +8,17 @@
     <?php
     dep($contacts);
     ?>
-    <!-- Button trigger create contact modal -->
-    <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#contactModal" onclick="fillFieldsCreateForm()">
-      Agregar contacto
-    </button>
+    <div class="d-flex justify-content-between">
+      <form action="/contacts" class="d-flex gap-1" autocomplete="off">
+        <input type="text" class="form-control" name="search" id="search" aria-describedby="searchHelp">
+        <button type="submit" class="btn btn-sm btn-primary">Buscar</button>
+      </form>
+      <!-- Button trigger create contact modal -->
+      <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal" onclick="fillFieldsCreateForm()">
+        Agregar contacto
+      </button>
+    </div>
+
     <table class="table">
       <thead>
         <th scope="col">#</th>
@@ -21,7 +28,7 @@
         <th scope="col">Acciones</th>
       </thead>
       <tbody id="contactsTableBody">
-        <?php $contador = 1 ?>
+        <?php $contador = $contacts['from']; ?>
         <?php foreach ($contacts['data'] as $contact) { ?>
           <tr>
             <td scope="row"><?php echo $contador++; ?></td>

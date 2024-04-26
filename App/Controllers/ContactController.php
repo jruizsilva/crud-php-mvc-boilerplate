@@ -18,8 +18,17 @@ class ContactController extends Controller
   public function index()
   {
     $model = new Contact;
-    $contacts = $model->paginate(1);
-
+    if (isset($_GET['search'])) {
+      $search = $_GET['search'];
+      $contacts = $model
+        ->where("name", "LIKE", "%$search%")
+        ->orWhere("email", "LIKE", "%$search%")
+        ->orWhere("phone", "LIKE", "%$search%")
+        ->paginate(1);
+    } else {
+      $contacts = $model
+        ->paginate(1);
+    }
     $data = [
       'contacts' => $contacts,
       'head_title' => 'Contactos',
@@ -28,14 +37,6 @@ class ContactController extends Controller
     ];
 
     return $this->view('contact', $data);
-  }
-
-  public function findAll()
-  {
-    $model = new Contact;
-    $contacts = $model->paginate(1);
-
-    return $contacts;
   }
 
   public function findOne($id)
