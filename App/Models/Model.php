@@ -167,7 +167,7 @@ class Model
       'to' => ($page - 1) * $cant + count($data),
       'current_page' => $page,
       'last_page' => $last_page,
-      'next_page_url' => $page < $last_page ? $uri . '?page=' . $page + 1 : null,
+      'next_page_url' => $page < $last_page ? '/' . $uri . '?page=' . $page + 1 : null,
       'prev_page_url' => $page > 1 ? '/' . $uri . '?page=' . $page - 1 : null,
       'data' => $data
     ];

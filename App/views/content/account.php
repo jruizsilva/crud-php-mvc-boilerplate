@@ -20,7 +20,7 @@
       </div>
       <button type="submit" class="btn btn-primary">Actualizar datos</button>
       <?php if ($_SESSION['user']['email']) { ?>
-        <button class="btn btn-success text-nowrap">Confirmar email</button>
+        <button class="btn btn-success text-nowrap" disabled>Confirmar email</button>
       <?php } ?>
     </form>
   </div>

@@ -22,7 +22,7 @@
       </thead>
       <tbody id="contactsTableBody">
         <?php $contador = 1 ?>
-        <?php foreach ($contacts as $contact) { ?>
+        <?php foreach ($contacts['data'] as $contact) { ?>
           <tr>
             <td scope="row"><?php echo $contador++; ?></td>
             <td><?php echo $contact['name']; ?></td>
@@ -36,6 +36,8 @@
         <?php } ?>
       </tbody>
     </table>
+    <?php $paginate = "contacts";
+    require_once("App/views/inc/pagination.php"); ?>
 
     <!-- Modal contact -->
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">

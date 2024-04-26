@@ -18,7 +18,8 @@ class ContactController extends Controller
   public function index()
   {
     $model = new Contact;
-    $contacts = $model->findAll();
+    $contacts = $model->paginate(1);
+
     $data = [
       'contacts' => $contacts,
       'head_title' => 'Contactos',
@@ -32,7 +33,7 @@ class ContactController extends Controller
   public function findAll()
   {
     $model = new Contact;
-    $contacts = $model->findAll();
+    $contacts = $model->paginate(1);
 
     return $contacts;
   }

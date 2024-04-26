@@ -100,7 +100,8 @@ function okResponse(string $message)
 {
   $data = [
     "success" => true,
-    "message" => $message
+    "message" => $message,
+    "redirectUrl" => $_SERVER['HTTP_REFERER']
   ];
   return jsonResponse($data, 200);
 }
@@ -174,6 +175,12 @@ function sendEmail($data, $template)
   $mensaje = ob_get_clean();
   $send = mail($toEmail, $subject, $mensaje, $de);
   return $send;
+}
+
+function redirect($url)
+{
+  header("Location: $url");
+  exit;
 }
 
 // class EmailSender
