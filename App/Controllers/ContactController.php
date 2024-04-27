@@ -50,7 +50,7 @@ class ContactController extends Controller
       }
       return $contact;
     } catch (Exception $e) {
-      internalServerErrorResponse("Error al obtener contacto", $e->getMessage());
+      return internalServerErrorResponse("Error al obtener contacto", $e->getMessage());
     }
   }
 
@@ -65,7 +65,7 @@ class ContactController extends Controller
         return createdResponse("Contacto creado exitosamente");
       }
     } catch (Exception $e) {
-      internalServerErrorResponse("Error al crear contacto", $e->getMessage());
+      return internalServerErrorResponse("Error al crear contacto", $e->getMessage());
     }
   }
 
@@ -85,7 +85,7 @@ class ContactController extends Controller
 
       return okResponse("Contacto actualizado correctamente");
     } catch (Exception $e) {
-      internalServerErrorResponse("Error al actualizar usuario", $e->getMessage());
+      return internalServerErrorResponse("Error al actualizar usuario", $e->getMessage());
     }
   }
 
@@ -101,7 +101,7 @@ class ContactController extends Controller
       $model->deleteById($id);
       return okResponse("Contacto eliminado correctamente");
     } catch (Exception $e) {
-      internalServerErrorResponse("Error al eliminar contacto", $e->getMessage());
+      return internalServerErrorResponse("Error al eliminar contacto", $e->getMessage());
     }
   }
 }

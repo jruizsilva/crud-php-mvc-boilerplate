@@ -97,7 +97,7 @@ class Model
     if (!empty($this->orderBy)) {
       $this->orderBy .= ", {$column} {$order}";
     } else {
-      $this->orderBy = " ORDER BY {$column} {$order}";
+      $this->orderBy = "{$column} {$order}";
     }
     return $this;
   }
@@ -110,7 +110,7 @@ class Model
         $sql .= " WHERE {$this->where}";
       }
       if (!empty($this->orderBy)) {
-        $sql .= $this->orderBy;
+        $sql .= " ORDER BY {$this->orderBy}";
       }
       $this->query($sql, $this->values);
     }
@@ -126,7 +126,7 @@ class Model
         $sql .= " WHERE {$this->where}";
       }
       if (!empty($this->orderBy)) {
-        $sql .= $this->orderBy;
+        $sql .= " ORDER BY {$this->orderBy}";
       }
       $this->query($sql, $this->values);
     }
@@ -142,7 +142,7 @@ class Model
       $sql .= " WHERE {$this->where}";
     }
     if (!empty($this->orderBy)) {
-      $sql .= $this->orderBy;
+      $sql .= " ORDER BY {$this->orderBy}";
     }
     $sql .= " LIMIT " . ($page - 1) * $cant . ", {$cant}";
     $data = $this->query($sql, $this->values)->all();

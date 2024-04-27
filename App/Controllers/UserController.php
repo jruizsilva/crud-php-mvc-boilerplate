@@ -15,6 +15,23 @@ class UserController extends Controller
     }
   }
 
+  public function index()
+  {
+    $model = new User();
+    try {
+      $users = $model->select("id", "name", "email")->all();
+      $data = [
+        'users' => $users,
+        'head_title' => 'Usuarios',
+        'head_description' => 'Usuarios',
+        'jsfilename' => 'users',
+      ];
+      return $this->view('users', $data);
+    } catch (Exception $e) {
+      return internalServerErrorResponse("Error al obtener usuarios", $e->getMessage());
+    }
+  }
+
   public function accountView()
   {
     $data = [

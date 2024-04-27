@@ -22,6 +22,15 @@
             <li class="nav-item mx-2">
               <a class="nav-link <?php echo $_SERVER['REQUEST_URI'] == '/contacts' ? 'active' : '' ?>" aria-current="page" href="<?php echo APP_URL; ?>/contacts">Contactos</a>
             </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link <?php echo $_SERVER['REQUEST_URI'] == '/dashboard' ? 'active' : '' ?>" aria-current="page" href="<?php echo APP_URL; ?>/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link <?php echo $_SERVER['REQUEST_URI'] == '/users' ? 'active' : '' ?>" aria-current="page" href="<?php echo APP_URL; ?>/users">Usuarios</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link <?php echo $_SERVER['REQUEST_URI'] == '/posts' ? 'active' : '' ?>" aria-current="page" href="<?php echo APP_URL; ?>/posts">Posts</a>
+            </li>
           </ul>
         <?php } ?>
 
