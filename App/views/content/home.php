@@ -4,23 +4,29 @@
   <?php require_once ("App/views/inc/nav_portfolio.php"); ?>
 
   <!-- ABOUT -->
-  <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
+  <section class="d-flex justify-content-center align-items-center" style="height: calc(100vh - 86px);">
     <div class="container">
-      <div class="row">
-
+      <div class="row g-0">
         <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
-          <div class="about-text">
-            <small class="small-text">Bienvenido!</small>
-            <h1>
+          <div>
+            <h1 class="my-3 fw-bold display-4">
               <span class="d-block">Hola, soy Jonathan</span>
               <span class="role">Desarrollador Web</span>
             </h1>
 
-            <p>Building a successful product is a challenge. I am highly energetic in user experience design, interfaces
+            <p class="mb-3 fw-lighter" style="font-size: 18px; color: #5b5b5b;">Building a successful product is a
+              challenge. I am
+              highly energetic
+              in user
+              experience
+              design, interfaces
               and web development.</p>
 
-            <div class="custom-btn-group mt-4">
-              <a href="#" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Resume</a>
+            <div class="mt-4">
+              <a href="#" class="btn mr-lg-2 custom-btn">
+                <i class="uil uil-file-alt"></i>
+                Descargar CV
+              </a>
             </div>
           </div>
         </div>

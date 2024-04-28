@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg py-4 px-0">
+<nav class="navbar navbar-expand-lg py-4 px-0" style="border-bottom: 2px solid #eee;">
   <div class="container">
     <!-- Toggler button -->
     <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
@@ -16,29 +16,19 @@
       <div class="offcanvas-body d-flex justify-content-end flex-column flex-lg-row">
         <ul
           class="navbar-nav justify-content-center align-items-center flex-grow-1 flex-lg-row flex-column gap-4 gap-lg-0">
-          <li class="nav-item mx-2">
-            <a class="nav-link" aria-current="page" href="<?php echo APP_URL; ?>">
-              <span data-hover="Home">Home</span>
+          <li class="nav-item mx-3">
+            <a class="nav-link" aria-current="page" href="#">
+              <span data-hover="Inicio">Inicio</span>
             </a>
           </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#about">
-              <span data-hover="About">About</span>
-            </a>
-          </li>
-          <li class="nav-item mx-2">
+          <li class="nav-item mx-3">
             <a class="nav-link" href="#project">
-              <span data-hover="Projects">Projects</span>
+              <span data-hover="Proyectos">Proyectos</span>
             </a>
           </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#resume">
-              <span data-hover="Resume">Resume</span>
-            </a>
-          </li>
-          <li class="nav-item mx-2">
+          <li class="nav-item mx-3">
             <a class="nav-link" href="#contact">
-              <span data-hover="Contact">Contact</span>
+              <span data-hover="Contacto">Contacto</span>
             </a>
           </li>
         </ul>
