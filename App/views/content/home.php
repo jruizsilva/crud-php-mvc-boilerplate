@@ -1,6 +1,6 @@
 <?php require_once ("App/views/inc/head_portfolio.php"); ?>
 
-<body class="dark-mode">
+<body data-bs-theme="dark">
   <?php require_once ("App/views/inc/nav_portfolio.php"); ?>
 
   <!-- ABOUT -->
