@@ -71,8 +71,13 @@
       </div>
       <!-- Project Two Row-->
       <div class="row gx-0 justify-content-center">
-        <div class="col-lg-6 d-flex align-items-center">
-          <img class="img-fluid" src="/App/views/img/chat-app.png" alt="..." />
+        <div class="col-lg-6 d-flex align-items-center justify-content-center set-bg"
+          data-setbg="<?php echo APP_URL; ?>/App/views/img/chat-app.png" style="min-height: 300px" ;>
+          <!-- <img class="img-fluid" src="/App/views/img/chat-app.png" alt="..." /> -->
+          <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup">
+            <i class="fa fa-play"></i>
+          </a>
+
         </div>
         <div class="col-lg-6 order-lg-first">
           <div class="bg-body-tertiary text-center h-100 project">
@@ -83,7 +88,7 @@
                     target="_blank">Chat
                     App</a>
                 </h4>
-                <p class="mb-2 text-white-50">Desarrollar una aplicación web que permite a los usuarios chatear un salas
+                <p class="mb-2 text-white-50">Desarrollar una aplicación web que permite a los usuarios chatear en salas
                   publicas o privadas</p>
                 <p class="mb-0">Stack:
                   <span class="text-white-50">Typescript, React.js, Java, Spring</span>
@@ -95,6 +100,64 @@
       </div>
     </div>
   </section>
+
+  <!-- Work Section Begin -->
+  <section class="work">
+    <div class="work__gallery">
+      <div class="grid-sizer"></div>
+      <div class="work__item wide__item set-bg" data-setbg="<?php echo APP_URL; ?>/App/views/img/chat-app.png">
+        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
+            class="fa fa-play"></i></a>
+        <div class="work__item__hover">
+          <h4>VIP Auto Tires & Service</h4>
+          <ul>
+            <li>eCommerce</li>
+            <li>Magento</li>
+          </ul>
+        </div>
+      </div>
+      <div class="work__item small__item set-bg" data-setbg="<?php echo APP_URL; ?>/App/views/img/chat-app.png">
+        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup">
+          <i class="fa fa-play"></i>
+        </a>
+      </div>
+      <div class="work__item small__item set-bg" data-setbg="img/work/work-3.jpg">
+        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
+            class="fa fa-play"></i></a>
+      </div>
+      <div class="work__item large__item set-bg" data-setbg="<?php echo APP_URL; ?>/App/views/img/chat-app.png">
+        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
+            class="fa fa-play"></i></a>
+        <div class="work__item__hover">
+          <h4>VIP Auto Tires & Service</h4>
+          <ul>
+            <li>eCommerce</li>
+            <li>Magento</li>
+          </ul>
+        </div>
+      </div>
+      <div class="work__item small__item set-bg" data-setbg="img/work/work-5.jpg">
+        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
+            class="fa fa-play"></i></a>
+      </div>
+      <div class="work__item small__item set-bg" data-setbg="img/work/work-6.jpg">
+        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
+            class="fa fa-play"></i></a>
+      </div>
+      <div class="work__item wide__item set-bg" data-setbg="img/work/work-7.jpg">
+        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
+            class="fa fa-play"></i></a>
+        <div class="work__item__hover">
+          <h4>VIP Auto Tires & Service</h4>
+          <ul>
+            <li>eCommerce</li>
+            <li>Magento</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Work Section End -->
 
   <?php require_once ("App/views/inc/script_portfolio.php"); ?>
 </body>

@@ -8,5 +8,6 @@
   <meta name="description" content="<?php echo $head_description ?>">
   <link rel="stylesheet" href="<?php echo APP_URL; ?>/App/views/css/unicons.css">
   <link rel="stylesheet" href="<?php echo APP_URL; ?>/App/views/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo APP_URL; ?>/App/views/css/magnific-popup.css">
   <link rel="stylesheet" href="<?php echo APP_URL; ?>/App/views/css/styles.css">
 </head>
