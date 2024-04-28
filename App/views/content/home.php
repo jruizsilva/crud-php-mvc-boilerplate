@@ -4,7 +4,7 @@
   <?php require_once ("App/views/inc/nav_portfolio.php"); ?>
 
   <!-- ABOUT -->
-  <section class="d-flex justify-content-center align-items-center" style="height: calc(100vh - 86px);">
+  <section class="d-flex justify-content-center align-items-center" style="padding-top:86px;">
     <div class="container">
       <div class="row g-0">
         <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
@@ -31,7 +31,7 @@
           </div>
         </div>
 
-        <div class="col-lg-5 col-md-12 col-12">
+        <div class="col-lg-5 col-md-12 d-lg-block d-none">
           <div class="about-image svg">
             <img src="<?php echo APP_URL; ?>/App/views/img/undraw_web_developer.svg" class="img-fluid" alt="svg image">
           </div>

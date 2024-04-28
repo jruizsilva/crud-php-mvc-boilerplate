@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg py-4 px-0" style="border-bottom: 2px solid #eee;">
+<nav class="navbar navbar-expand-sm py-4 px-0 bg-body" style="border-bottom: 2px solid #eee;">
   <div class="container">
     <!-- Toggler button -->
-    <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
+    <button class="navbar-toggler shadow-none border-0 p-0" type="button" data-bs-toggle="offcanvas"
       data-bs-target="#offcanvasNavbarPorfolio" aria-controls="offcanvasNavbarPorfolio" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -13,9 +13,9 @@
         <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <!-- Offcanvas body -->
-      <div class="offcanvas-body d-flex justify-content-end flex-column flex-lg-row">
+      <div class="offcanvas-body d-flex justify-content-end flex-column flex-sm-row">
         <ul
-          class="navbar-nav justify-content-center align-items-center flex-grow-1 flex-lg-row flex-column gap-4 gap-lg-0">
+          class="navbar-nav justify-content-center align-items-center flex-grow-1 flex-sm-row flex-column gap-4 gap-sm-0">
           <li class="nav-item mx-3">
             <a class="nav-link" aria-current="page" href="#">
               <span data-hover="Inicio">Inicio</span>
