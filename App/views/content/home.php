@@ -4,7 +4,7 @@
   <?php require_once ("App/views/inc/nav_portfolio.php"); ?>
 
   <!-- ABOUT -->
-  <section class="d-flex justify-content-center align-items-center" style="padding-top:86px;">
+  <section class="d-flex justify-content-center align-items-center" style="padding-top:120px;">
     <div class="container">
       <div class="row g-0">
         <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
@@ -37,6 +37,61 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects-->
+  <section class="projects-section" id="proyectos">
+    <div class="container">
+      <h1 class="display-5 mb-4">Proyectos</h1>
+      <!-- Project One Row-->
+      <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+        <div class="col-lg-6 d-flex align-items-center">
+          <img class="img-fluid" src="/App/views/img/twitter-clon.png" alt="..." />
+        </div>
+        <div class="col-lg-6">
+          <div class="bg-body-tertiary text-center h-100 project">
+            <div class="d-flex h-100">
+              <div class="project-text w-100 my-auto text-center text-lg-left">
+                <h4>
+                  <a href="https://twitter-clon-frontend.vercel.app/login" class="link-opacity-75" target="_blank">Clon
+                    Twitter</a>
+                </h4>
+                <p class="mb-2 text-white-50">Desarrollar una aplicación que permite a los usuarios publicar posts,
+                  comentar, dar likes a posts o comentarios, guardar posts, seguir usuarios. Subir imagenes de perfil y
+                  de fondo, editar los datos del usuario</p>
+                <p class="mb-0">Stack:
+                  <span class="text-white-50">Typescript, React.js, Java, Spring</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Project Two Row-->
+      <div class="row gx-0 justify-content-center">
+        <div class="col-lg-6 d-flex align-items-center">
+          <img class="img-fluid" src="/App/views/img/chat-app.png" alt="..." />
+        </div>
+        <div class="col-lg-6 order-lg-first">
+          <div class="bg-body-tertiary text-center h-100 project">
+            <div class="d-flex h-100">
+              <div class="project-text w-100 my-auto text-center text-lg-right">
+                <h4>
+                  <a href="https://basic-chat-with-websocket-frontend.vercel.app/" class="link-opacity-75"
+                    target="_blank">Chat
+                    App</a>
+                </h4>
+                <p class="mb-2 text-white-50">Desarrollar una aplicación web que permite a los usuarios chatear un salas
+                  publicas o privadas</p>
+                <p class="mb-0">Stack:
+                  <span class="text-white-50">Typescript, React.js, Java, Spring</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

@@ -22,12 +22,12 @@
             </a>
           </li>
           <li class="nav-item mx-3">
-            <a class="nav-link" href="#project">
+            <a class="nav-link" href="#proyectos">
               <span data-hover="Proyectos">Proyectos</span>
             </a>
           </li>
           <li class="nav-item mx-3">
-            <a class="nav-link" href="#contact">
+            <a class="nav-link" href="#contacto">
               <span data-hover="Contacto">Contacto</span>
             </a>
           </li>
