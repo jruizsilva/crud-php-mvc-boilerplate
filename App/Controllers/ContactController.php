@@ -21,12 +21,14 @@ class ContactController extends Controller
     if (isset($_GET['search'])) {
       $search = $_GET['search'];
       $contacts = $model
-        ->where("name", "LIKE", "%$search%")
+        ->where("user_id", "=", $_SESSION['user']['id'])
+        ->andWhere("name", "LIKE", "%$search%")
         ->orWhere("email", "LIKE", "%$search%")
         ->orWhere("phone", "LIKE", "%$search%")
         ->paginate(1);
     } else {
       $contacts = $model
+        ->where("user_id", "=", $_SESSION['user']['id'])
         ->paginate(1);
     }
     $data = [
@@ -58,6 +60,7 @@ class ContactController extends Controller
   {
     validateFields($_POST, "name", "email", "phone");
     $_POST['name'] = ucwords($_POST['name']);
+    $_POST['user_id'] = $_SESSION['user']['id'];
     try {
       $model = new Contact;
       $insertId = $model->create($_POST);
@@ -80,6 +83,9 @@ class ContactController extends Controller
       if (empty($contact)) {
         return notFoundResponse("El contacto a actualizar no existe");
       }
+      if ($contact['user_id'] != $_SESSION['user']['id']) {
+        return forbiddenResponse("No tienes permisos para actualizar este contacto");
+      }
 
       $model->update($id, $_POST);
 
@@ -97,6 +103,9 @@ class ContactController extends Controller
       $contact = $model->where("id", "=", $id)->first();
       if (empty($contact)) {
         notFoundResponse("El contacto no existe");
+      }
+      if ($contact['user_id'] != $_SESSION['user']['id']) {
+        return forbiddenResponse("No tienes permisos para eliminar este contacto");
       }
       $model->deleteById($id);
       return okResponse("Contacto eliminado correctamente");

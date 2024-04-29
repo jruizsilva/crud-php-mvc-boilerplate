@@ -1,20 +1,18 @@
-<?php require_once("App/views/inc/head.php"); ?>
+<?php require_once ("App/views/inc/head.php"); ?>
 
 <body>
-  <?php require_once("App/views/inc/nav.php"); ?>
+  <?php require_once ("App/views/inc/nav.php"); ?>
   <div class="container py-4">
     <h1 class="text-center">Listado de contactos</h1>
 
-    <?php
-    dep($contacts);
-    ?>
     <div class="d-flex justify-content-between">
       <form action="/contacts" class="d-flex gap-1" autocomplete="off">
         <input type="text" class="form-control" name="search" id="search" aria-describedby="searchHelp">
         <button type="submit" class="btn btn-sm btn-primary">Buscar</button>
       </form>
       <!-- Button trigger create contact modal -->
-      <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal" onclick="fillFieldsCreateForm()">
+      <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal"
+        onclick="fillFieldsCreateForm()">
         Agregar contacto
       </button>
     </div>
@@ -36,15 +34,18 @@
             <td><?php echo $contact['email']; ?></td>
             <td><?php echo $contact['phone']; ?></td>
             <td>
-              <button type="button" class="btn btn-sm btn-warning" onclick="fillFieldsEditForm(<?php echo $contact['id'] ?>)" data-bs-toggle="modal" data-bs-target="#contactModal">Editar</button>
-              <button type="button" class="btn btn-sm btn-danger" onclick="handleDelete(<?php echo $contact['id'] ?>)">Eliminar</button>
+              <button type="button" class="btn btn-sm btn-warning"
+                onclick="fillFieldsEditForm(<?php echo $contact['id'] ?>)" data-bs-toggle="modal"
+                data-bs-target="#contactModal">Editar</button>
+              <button type="button" class="btn btn-sm btn-danger"
+                onclick="handleDelete(<?php echo $contact['id'] ?>)">Eliminar</button>
             </td>
           </tr>
         <?php } ?>
       </tbody>
     </table>
     <?php $paginate = "contacts";
-    require_once("App/views/inc/pagination.php"); ?>
+    require_once ("App/views/inc/pagination.php"); ?>
 
     <!-- Modal contact -->
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
@@ -77,7 +78,7 @@
     </div>
   </div>
 
-  <?php require_once("App/views/inc/script.php") ?>
+  <?php require_once ("App/views/inc/script.php") ?>
 </body>
 
 </html>

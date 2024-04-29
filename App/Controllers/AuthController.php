@@ -11,7 +11,7 @@ class AuthController extends Controller
   {
     session_start();
     if (isset($_SESSION['user'])) {
-      return $this->redirect('/');
+      $this->redirect('/');
     }
   }
   public function loginView()
@@ -72,13 +72,12 @@ class AuthController extends Controller
     } catch (Exception $e) {
       return $e->getMessage();
     }
-    return "login";
   }
 
   public function logout()
   {
     if (session_destroy()) {
       $this->redirect('login');
-    };
+    }
   }
 }

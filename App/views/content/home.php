@@ -42,9 +42,9 @@
   </section>
 
   <!-- Projects-->
-  <section class="projects-section" id="proyectos">
+  <section class="projects-section">
     <div class="container">
-      <h1 class="display-5 mb-4">Proyectos</h1>
+      <h1 class="display-5 mb-4" id="proyectos">Proyectos</h1>
       <!-- Project One Row-->
       <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
         <div class="col-lg-6 d-flex align-items-center justify-content-center set-bg"
@@ -102,6 +102,33 @@
       </div>
     </div>
   </section>
+
+  <!-- Contact-->
+  <section class="contact-section" id="contacto">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-5 card py-4 bg-body-tertiary">
+          <div class="card-body text-center">
+            <i class="fas fa-envelope mb-2" style="color: #64a19d;"></i>
+            <h4 class="text-uppercase m-0">Email</h4>
+            <hr class="my-4 mx-auto" />
+            <div class="small text-body"><a href="mailto:ruizsilvajonathan@gmail.com">ruizsilvajonathan@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="social d-flex justify-content-center">
+        <a class="mx-2" href="https://www.linkedin.com/in/jruizsilva" target="_blank"><i
+            class="fa-brands fa-linkedin-in"></i></a>
+        <a class="mx-2" href="https://github.com/jruizsilva" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer-->
+  <footer class="footer small text-center text-white-50">
+    <div class="container px-4 px-lg-5">&copy; Creado por Jonathan Ruiz Silva - 2024</div>
+  </footer>
 
   <?php require_once ("App/views/inc/script_portfolio.php"); ?>
 </body>

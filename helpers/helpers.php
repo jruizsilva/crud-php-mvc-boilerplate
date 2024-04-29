@@ -159,6 +159,15 @@ function notFoundResponse($message = null)
   return jsonResponse($data, 404);
 }
 
+function forbiddenResponse(string $message = null)
+{
+  $data = [
+    "success" => false,
+    "message" => $message ?? "Acceso no autorizado"
+  ];
+  return jsonResponse($data, 403);
+}
+
 //Envio de correos
 function sendEmail($data, $template)
 {
@@ -171,7 +180,7 @@ function sendEmail($data, $template)
   $de .= "Content-type: text/html; charset=UTF-8\r\n";
   $de .= "From: {$empresa} <{$remitente}>\r\n";
   ob_start();
-  require_once("../views/email/" . $template . ".php");
+  require_once ("../views/email/" . $template . ".php");
   $mensaje = ob_get_clean();
   $send = mail($toEmail, $subject, $mensaje, $de);
   return $send;
