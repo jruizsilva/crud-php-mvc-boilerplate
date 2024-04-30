@@ -21,9 +21,6 @@ echo "  toastSuccess?.remove();";
 echo "}, 2500);";
 echo "</script>";
 ?>
-<?php
-dep($_SESSION);
-?>
 <script src="<?php echo APP_URL; ?>/app/views/js/lib/bootstrap.bundle.min.js"></script>
 <script src="<?php echo APP_URL; ?>/app/views/js/lib/axios.min.js"></script>
 <script src="<?php echo APP_URL; ?>/app/views/js/main.js"></script>
