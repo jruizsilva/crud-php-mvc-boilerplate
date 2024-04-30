@@ -65,7 +65,7 @@ class ContactController extends Controller
       $model = new Contact;
       $insertId = $model->create($_POST);
       if ($insertId > 0) {
-        $_SESSION['success_message'] = "Creado correctamente";
+        $_SESSION['success_message'] = "Contacto creado exitosamente";
         return createdResponse("Contacto creado exitosamente");
       }
     } catch (Exception $e) {
@@ -89,7 +89,7 @@ class ContactController extends Controller
       }
 
       $model->update($id, $_POST);
-      $_SESSION['success_message'] = "Actualizado correctamente";
+      $_SESSION['success_message'] = "Contacto actualizado correctamente";
       return okResponse("Contacto actualizado correctamente");
     } catch (Exception $e) {
       return internalServerErrorResponse("Error al actualizar usuario", $e->getMessage());
@@ -110,7 +110,7 @@ class ContactController extends Controller
       }
       $model->deleteById($id);
 
-      $_SESSION['success_message'] = "Eliminado correctamente";
+      $_SESSION['success_message'] = "Contacto eliminado correctamente";
       return okResponse("Contacto eliminado correctamente");
     } catch (Exception $e) {
       return internalServerErrorResponse("Error al eliminar contacto", $e->getMessage());
