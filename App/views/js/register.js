@@ -26,7 +26,7 @@ function createAccount(formData) {
   axios
     .post(APP_URL + "/register", formData)
     .then((res) => {
-      if (res.status == 200 && res.data.success == true) {
+      if (res.status == 201 && res.data.success == true) {
         Swal.fire({
           title: "Cuenta creada!",
           text: res.data.message,
