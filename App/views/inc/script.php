@@ -18,7 +18,7 @@ echo "<script>";
 echo "setTimeout(() => {";
 echo "let toastSuccess = document.getElementById('toastSuccess');";
 echo "  toastSuccess?.remove();";
-echo "}, 2000);";
+echo "}, 2500);";
 echo "</script>";
 ?>
 <?php
