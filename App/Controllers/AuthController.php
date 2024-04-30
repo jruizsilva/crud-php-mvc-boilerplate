@@ -11,7 +11,7 @@ class AuthController extends Controller
   {
     session_start();
     if (isset($_SESSION['user'])) {
-      $this->redirect('/');
+      $this->redirect('/contacts');
     }
   }
   public function loginView()

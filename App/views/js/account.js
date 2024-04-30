@@ -8,7 +8,10 @@ accountForm.addEventListener("submit", (e) => {
   const name = d.querySelector("#name").value;
 
   if (name == "") {
-    alert("El nombre es obligatorio");
+    Swal.fire({
+      title: "El nombre es obligatorio",
+      icon: "warning",
+    });
     return;
   }
 
@@ -22,7 +25,9 @@ const updateAccountData = (formData) => {
   axios
     .post(`/account/${id}/update`, formData)
     .then((res) => {
-      console.log(res);
+      if (res.status == 200 && res.data.success == true) {
+        window.location.href = res.data.redirectUrl;
+      }
     })
     .catch((err) => {
       console.log(err);

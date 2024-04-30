@@ -9,7 +9,11 @@ createContactForm.addEventListener("submit", (e) => {
   const id = d.querySelector("#id").value;
 
   if (name == "" || email == "" || phone == "") {
-    return alert("Todos los campos son obligatorios");
+    Swal.fire({
+      title: "Todos los campos son obligatorios",
+      icon: "warning",
+    });
+    return;
   }
   const formData = new FormData(createContactForm);
   if (id == "") {
@@ -24,7 +28,6 @@ function handleInsert(formData) {
     .post(APP_URL + "/contacts", formData)
     .then((res) => {
       if (res.status == 201 && res.data.success == true) {
-        alert("Contacto creado correctamente");
         window.location.href = APP_URL + "/contacts";
       }
     })

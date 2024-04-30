@@ -10,7 +10,10 @@ registerForm.addEventListener("submit", (e) => {
   const password = d.querySelector("#password").value;
 
   if (name === "" || username === "" || password === "") {
-    alert("Todos los campos son obligatorios");
+    Swal.fire({
+      title: "Todos los campos son obligatorios",
+      icon: "warning",
+    });
     return;
   }
 
@@ -23,7 +26,13 @@ function createAccount(formData) {
   axios
     .post(APP_URL + "/register", formData)
     .then((res) => {
-      console.log(res);
+      if (res.status == 200 && res.data.success == true) {
+        Swal.fire({
+          title: "Cuenta creada!",
+          text: res.data.message,
+          icon: "success",
+        });
+      }
     })
     .catch((err) => {
       console.log(err);

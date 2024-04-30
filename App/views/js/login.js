@@ -9,7 +9,10 @@ loginForm.addEventListener("submit", (e) => {
   const password = d.querySelector("#password").value;
 
   if (username === "" || password === "") {
-    alert("Todos los campos son obligatorios");
+    Swal.fire({
+      title: "Todos los campos son obligatorios",
+      icon: "warning",
+    });
     return;
   }
 

@@ -61,6 +61,7 @@ class UserController extends Controller
       $_SESSION['user']['name'] = $user['name'];
       $_SESSION['user']['email'] = $user['email'];
 
+      $_SESSION['success_message'] = "Datos actualizados";
       return okResponse("Datos de la cuenta actualizados");
     } catch (Exception $e) {
       return internalServerErrorResponse("Error al actualizar datos de la cuenta", $e->getMessage());
