@@ -27,7 +27,7 @@ function loginAccount(formData) {
     .then((res) => {
       console.log(res);
       if (res.status == 200 && res.data.success == true) {
-        window.location.href = APP_URL;
+        window.location.href = `${APP_URL}/contacts`;
       }
     })
     .catch((err) => {
