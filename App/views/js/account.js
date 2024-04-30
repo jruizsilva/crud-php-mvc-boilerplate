@@ -30,6 +30,10 @@ const updateAccountData = (formData) => {
       }
     })
     .catch((err) => {
-      console.log(err);
+      const errorMessage = err.response.data.message ?? "Error";
+      Swal.fire({
+        title: errorMessage,
+        icon: "warning",
+      });
     });
 };

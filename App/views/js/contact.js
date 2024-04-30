@@ -32,8 +32,9 @@ function handleInsert(formData) {
       }
     })
     .catch((err) => {
+      const errorMessage = err.response.data.message ?? "Error";
       Swal.fire({
-        title: err.message ?? "Error",
+        title: errorMessage,
         icon: "warning",
       });
     });
@@ -59,8 +60,9 @@ async function handleDelete(id) {
       }
     })
     .catch((err) => {
+      const errorMessage = err.response.data.message ?? "Error";
       Swal.fire({
-        title: err.message ?? "Error",
+        title: errorMessage,
         icon: "warning",
       });
     });
@@ -77,8 +79,9 @@ function handleUpdate(formData) {
       }
     })
     .catch((err) => {
+      const errorMessage = err.response.data.message ?? "Error";
       Swal.fire({
-        title: err.message ?? "Error",
+        title: errorMessage,
         icon: "warning",
       });
     });
@@ -104,7 +107,11 @@ function fillFieldsEditForm(id) {
       d.querySelector("#phone").value = contact.phone;
     })
     .catch((err) => {
-      console.log(err);
+      const errorMessage = err.response.data.message ?? "Error";
+      Swal.fire({
+        title: errorMessage,
+        icon: "warning",
+      });
     });
 }
 
