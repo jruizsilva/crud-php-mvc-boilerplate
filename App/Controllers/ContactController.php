@@ -63,6 +63,13 @@ class ContactController extends Controller
     $_POST['user_id'] = $_SESSION['user']['id'];
     try {
       $model = new Contact;
+      $contact = $model
+        ->where('user_id', '=', $_SESSION['user']['id'])
+        ->andWhere("email", "=", $_POST["email"])
+        ->first();
+      if (!empty($contact)) {
+        return badRequestResponse("El email ya esta asignado a uno de tus contactos");
+      }
       $insertId = $model->create($_POST);
       if ($insertId > 0) {
         $_SESSION['success_message'] = "Contacto creado exitosamente";

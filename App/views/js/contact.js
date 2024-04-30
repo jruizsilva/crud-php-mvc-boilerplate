@@ -32,12 +32,23 @@ function handleInsert(formData) {
       }
     })
     .catch((err) => {
-      console.log(err);
+      Swal.fire({
+        title: err.message ?? "Error",
+        icon: "warning",
+      });
     });
 }
 
-function handleDelete(id) {
-  if (!confirm("¿Estas seguro que desea eliminar el registro?")) {
+async function handleDelete(id) {
+  const result = await Swal.fire({
+    title: "¿Desea eliminar el registro?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Si, eliminar!",
+  });
+  if (!result.isConfirmed) {
     return;
   }
   axios
@@ -48,7 +59,10 @@ function handleDelete(id) {
       }
     })
     .catch((err) => {
-      console.log(err);
+      Swal.fire({
+        title: err.message ?? "Error",
+        icon: "warning",
+      });
     });
 }
 
@@ -63,7 +77,10 @@ function handleUpdate(formData) {
       }
     })
     .catch((err) => {
-      console.log(err);
+      Swal.fire({
+        title: err.message ?? "Error",
+        icon: "warning",
+      });
     });
 }
 
