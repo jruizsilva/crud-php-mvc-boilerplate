@@ -43,7 +43,7 @@
       <!-- Project One Row-->
       <div class="row gx-0 justify-content-center">
         <div class="col-lg-6 d-flex align-items-center justify-content-center set-bg"
-          data-setbg="<?php echo APP_URL; ?>/App/views/img/contacts-app.png" style="min-height: 300px" ;>
+          data-setbg="<?php echo APP_URL; ?>/App/views/img/contacts-app.png" style="min-height: 300px">
           <a href="https://www.youtube.com/watch?v=Jgt9z4czawE" class="play-btn video-popup">
             <i class="fa fa-play"></i>
           </a>
@@ -70,7 +70,7 @@
       <!-- Project Two Row-->
       <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
         <div class="col-lg-6 d-flex align-items-center justify-content-center set-bg"
-          data-setbg="<?php echo APP_URL; ?>/App/views/img/twitter-clon.png" style="min-height: 300px" ;>
+          data-setbg="<?php echo APP_URL; ?>/App/views/img/twitter-clon.png" style="min-height: 300px">
           <a href="https://www.youtube.com/watch?v=ajCkEWhbnkQ" class="play-btn video-popup">
             <i class="fa fa-play"></i>
           </a>
@@ -97,7 +97,7 @@
       <!-- Project Third Row-->
       <div class="row gx-0 justify-content-center">
         <div class="col-lg-6 d-flex align-items-center justify-content-center set-bg"
-          data-setbg="<?php echo APP_URL; ?>/App/views/img/chat-app.png" style="min-height: 300px" ;>
+          data-setbg="<?php echo APP_URL; ?>/App/views/img/chat-app.png" style="min-height: 300px">
           <a href="https://www.youtube.com/watch?v=s1oYghlDoOs" class="play-btn video-popup">
             <i class="fa fa-play"></i>
           </a>
