@@ -25,7 +25,6 @@ function loginAccount(formData) {
   axios
     .post(APP_URL + "/login", formData)
     .then((res) => {
-      console.log(res);
       if (res.status == 200 && res.data.success == true) {
         window.location.href = `${APP_URL}/contacts`;
       }

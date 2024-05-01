@@ -1,10 +1,5 @@
-let APP_URL;
-
-if (process.env.NODE_ENV === "production") {
-  APP_URL = "jonathanrs.infinityfreeapp.com";
-} else {
-  APP_URL = "http://crud.test";
-}
+const APP_URL = "http://crud.test";
+// const APP_URL = "http://jonathanrs.infinityfreeapp.com";
 
 function logout() {
   axios.post(APP_URL + "/logout").catch((err) => {
