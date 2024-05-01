@@ -97,7 +97,7 @@
       <!-- Project Third Row-->
       <div class="row gx-0 justify-content-center">
         <div class="col-lg-6 d-flex align-items-center justify-content-center set-bg"
-          data-setbg="<?php echo APP_URL; ?>/App/views/img/chat-app.png" style="min-height: 300px">
+          data-setbg="<?php echo APP_URL; ?>/App/views/img/messages-app.png" style="min-height: 300px">
           <a href="https://www.youtube.com/watch?v=s1oYghlDoOs" class="play-btn video-popup">
             <i class="fa fa-play"></i>
           </a>
