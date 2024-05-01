@@ -14,16 +14,11 @@
               <span class="role">Desarrollador Web</span>
             </h1>
 
-            <p class="mb-3 fw-lighter" style="font-size: 18px; color: #5b5b5b;">Building a successful product is a
-              challenge. I am
-              highly energetic
-              in user
-              experience
-              design, interfaces
-              and web development.</p>
-
+            <p class="mb-3 fw-lighter" style="font-size: 18px; color: #5b5b5b;">Me enfoco en desarrollar aplicaciones
+              dinámicas y robustas que se adaptan a las necesidades específicas de cada proyecto.</p>
             <div class="mt-4">
-              <a href="#" class="btn mr-lg-2 custom-btn">
+              <a href="https://drive.google.com/file/d/1X8CFS9J6LXxO59KWM_I5xDfRf-k067Lo/view?usp=sharing"
+                class="btn mr-lg-2 custom-btn" target="_blank">
                 <i class="uil uil-file-alt"></i>
                 Descargar CV
               </a>
@@ -58,7 +53,9 @@
             <div class="d-flex h-100">
               <div class="project-text w-100 my-auto text-center text-lg-right">
                 <h4>
-                  <a href="#" class="link-opacity-75" target="_blank">Contactos App</a>
+                  <a href="http://jonathanrs.infinityfreeapp.com/contacts" class="link-opacity-75"
+                    target="_blank">Contactos
+                    App</a>
                 </h4>
                 <p class="mb-2 text-white-50">Desarrollar una aplicación web que permite a los usuarios agendar los
                   datos de sus contactos.</p>

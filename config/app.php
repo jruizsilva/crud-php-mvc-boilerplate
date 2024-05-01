@@ -1,7 +1,7 @@
 <?php
 
-// const APP_URL = "http://crud.test";
-const APP_URL = "jonathanrs.infinityfreeapp.com";
+const APP_URL = "http://crud.test";
+// const APP_URL = "jonathanrs.infinityfreeapp.com";
 const APP_NAME = "CRUD";
 const APP_SESSION_NAME = "CRUD";
 
