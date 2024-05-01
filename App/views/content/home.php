@@ -46,6 +46,31 @@
     <div class="container">
       <h1 class="display-5 mb-4" id="proyectos">Proyectos</h1>
       <!-- Project One Row-->
+      <div class="row gx-0 justify-content-center">
+        <div class="col-lg-6 d-flex align-items-center justify-content-center set-bg"
+          data-setbg="<?php echo APP_URL; ?>/App/views/img/contacts-app.png" style="min-height: 300px" ;>
+          <a href="https://www.youtube.com/watch?v=Jgt9z4czawE" class="play-btn video-popup">
+            <i class="fa fa-play"></i>
+          </a>
+        </div>
+        <div class="col-lg-6 order-lg-first">
+          <div class="bg-body-tertiary text-center h-100 project">
+            <div class="d-flex h-100">
+              <div class="project-text w-100 my-auto text-center text-lg-right">
+                <h4>
+                  <a href="#" class="link-opacity-75" target="_blank">Contactos App</a>
+                </h4>
+                <p class="mb-2 text-white-50">Desarrollar una aplicación web que permite a los usuarios agendar los
+                  datos de sus contactos.</p>
+                <p class="mb-0">Stack:
+                  <span class="text-white-50">PHP, MySQL, Bootstrap 5, MVC</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Project Two Row-->
       <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
         <div class="col-lg-6 d-flex align-items-center justify-content-center set-bg"
           data-setbg="<?php echo APP_URL; ?>/App/views/img/twitter-clon.png" style="min-height: 300px" ;>
@@ -72,7 +97,7 @@
           </div>
         </div>
       </div>
-      <!-- Project Two Row-->
+      <!-- Project Third Row-->
       <div class="row gx-0 justify-content-center">
         <div class="col-lg-6 d-flex align-items-center justify-content-center set-bg"
           data-setbg="<?php echo APP_URL; ?>/App/views/img/chat-app.png" style="min-height: 300px" ;>
